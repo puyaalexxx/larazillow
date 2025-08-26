@@ -1,7 +1,7 @@
 <?php
 
-use Inertia\Inertia;
+use App\Http\Controllers\IndexController;
 
-Route::get('/', function () {
-    return Inertia::render('Index/Index');
-});
+Route::get('/', [IndexController::class, 'index']);
+
+Route::get('/show', [IndexController::class, 'show']);

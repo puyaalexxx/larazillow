@@ -1,15 +1,14 @@
-<script setup>
-    import { ref } from 'vue';
-
-    const counter = ref(0);
-
-    setInterval(() => counter.value++, 1000);
-</script>
-
 <template>
-hello {{counter}}!
+    <div>Index</div>
+
+    <div>The message is {{ message }}</div>
 </template>
 
-<style scoped>
+<script setup>
+defineProps({
+    message: String,
+});
+</script>
 
-</style>
+
+<style scoped></style>
