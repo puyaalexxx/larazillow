@@ -3,7 +3,7 @@ import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 import {fileURLToPath} from 'url'
-import {dirname} from 'path'
+import path, {dirname} from 'path'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -44,5 +44,10 @@ export default defineConfig({
         port: 5173,
         // https: false,  // This tells Vite to use the SSL cert from basicSsl plugin
         cors: true, // enable CORS for all origins (or customize below)
+    },
+    resolve: {
+        alias: {
+            'ziggy-js': path.resolve('vendor/tightenco/ziggy'),
+        },
     },
 });
