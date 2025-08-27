@@ -14,6 +14,38 @@
 namespace App\Models{
 /**
  * @property int $id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int $beds
+ * @property int $baths
+ * @property int $area
+ * @property string $city
+ * @property string $code
+ * @property string $street
+ * @property string $street_nr
+ * @property int $price
+ * @method static \Database\Factories\ListingFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereArea($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereBaths($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereBeds($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereCity($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereCode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereStreet($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereStreetNr($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Listing whereUpdatedAt($value)
+ */
+	class Listing extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * @property int $id
  * @property string $name
  * @property string $email
  * @property \Illuminate\Support\Carbon|null $email_verified_at
