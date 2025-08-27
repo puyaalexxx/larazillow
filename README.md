@@ -4,6 +4,7 @@
 
 - Laravel 12
 - Vue 3
+- Vue forms
 - Inertia.js
 - Tailwind CSS
 - Vite
@@ -17,3 +18,4 @@
 - Factories for dummy data
 - Database seeding
 - Model Relationships
+- CRUD operations

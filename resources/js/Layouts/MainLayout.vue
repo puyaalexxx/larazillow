@@ -1,6 +1,6 @@
 <template>
-  <Link href="/">Index Page</Link>
-  <Link href="/show">Show Page </Link>
+  <Link href="/listing">Listings</Link>
+  <Link href="/listing/create">New Listing</Link>
 
   <div v-if="flashSuccess" class="success">
     {{ flashSuccess }}
@@ -14,11 +14,12 @@ import { Link, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
 //page.props.value.flash.success
-const page = usePage();
+//const page = usePage();
 
-const flashSuccess = computed(() => page.props.flash?.success);
+const flashSuccess = computed(() => usePage().props.flash?.success);
 
-console.log(page.props);
+console.log(flashSuccess);
+
 </script>
 
 <style scoped>
