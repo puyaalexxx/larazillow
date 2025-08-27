@@ -10,9 +10,11 @@
         "fix": "prettier --write resources/js/**/*.{js,vue} && eslint --fix resources/js"
     },
     "devDependencies": {
-        "@tailwindcss/vite": "^4.0.0",
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/vite": "^4.1.12",
         "@vitejs/plugin-basic-ssl": "^2.1.0",
         "@vitejs/plugin-vue": "^6.0.1",
+        "autoprefixer": "^10.4.21",
         "axios": "^1.11.0",
         "concurrently": "^9.0.1",
         "eslint": "^9.34.0",
@@ -21,8 +23,9 @@
         "eslint-plugin-vue": "^10.4.0",
         "globals": "^16.3.0",
         "laravel-vite-plugin": "^2.0.0",
+        "postcss": "^8.5.6",
         "prettier": "^3.6.2",
-        "tailwindcss": "^4.0.0",
+        "tailwindcss": "^4.1.12",
         "vite": "^7.0.4",
         "vue-eslint-parser": "^10.2.0"
     },

@@ -2,6 +2,7 @@ import {createApp, h} from 'vue';
 import {createInertiaApp} from '@inertiajs/vue3';
 import MainLayout from '@/Layouts/MainLayout.vue';
 import {ZiggyVue} from 'ziggy-js';
+import '../css/app.css';
 
 const Ziggy = {
     url: 'http://larazillow.local', // 👈 force HTTP here

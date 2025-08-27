@@ -19,3 +19,4 @@
 - Database seeding
 - Model Relationships
 - CRUD operations
+- Ziggy package for Laravel named routes in JavaScript
