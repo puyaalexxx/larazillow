@@ -4,13 +4,6 @@ import MainLayout from '@/Layouts/MainLayout.vue';
 import {ZiggyVue} from 'ziggy-js';
 import '../css/app.css';
 
-const Ziggy = {
-    url: 'http://larazillow.local', // 👈 force HTTP here
-    port: null,
-    defaults: {},
-    routes: {}, // this will be filled by @routes
-};
-
 createInertiaApp({
     resolve: async name => {
         const pages = import.meta.glob('./Pages/**/*.vue', {eager: true});
@@ -23,7 +16,8 @@ createInertiaApp({
     setup({el, App, props, plugin}) {
         createApp({render: () => h(App, props)})
             .use(plugin)
-            .use(ZiggyVue, Ziggy)
+            .use(ZiggyVue)
             .mount(el);
     },
-}).then(module => console.log(module));
+}).then(module => {
+});

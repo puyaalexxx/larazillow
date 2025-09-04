@@ -20,3 +20,6 @@
 - Model Relationships
 - CRUD operations
 - Ziggy package for Laravel named routes in JavaScript
+- Authentication from Laravel
+- Route protection for non-authenticated users
+- User registration and login
