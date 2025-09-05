@@ -23,3 +23,4 @@
 - Authentication from Laravel
 - Route protection for non-authenticated users
 - User registration and login
+- Policies for Listings

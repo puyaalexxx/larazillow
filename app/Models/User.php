@@ -8,6 +8,7 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Notifications\DatabaseNotificationCollection;
@@ -45,6 +46,8 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
+    public mixed $is_admin;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -54,6 +57,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -85,5 +89,10 @@ class User extends Authenticatable
             get: fn($value) => $value,
             set: fn($value) => Hash::make($value),
         );
+    }
+
+    public function listings(): HasMany
+    {
+        return $this->hasMany(Listing::class);
     }
 }
