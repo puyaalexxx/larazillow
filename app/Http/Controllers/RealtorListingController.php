@@ -17,6 +17,7 @@ class RealtorListingController extends Controller
             'viewAny',
             Listing::class
         );
+
         $filters = [
             'deleted' => $request->boolean('deleted'),
             ...$request->only(['by', 'order'])
@@ -43,6 +44,7 @@ class RealtorListingController extends Controller
             'view',
             $listing
         );
+
         return Inertia::render(
             'Realtor/Show',
             [
@@ -60,6 +62,7 @@ class RealtorListingController extends Controller
             'create',
             Listing::class
         );
+
         return Inertia::render('Realtor/Create');
     }
 
@@ -69,6 +72,7 @@ class RealtorListingController extends Controller
             'create',
             Listing::class
         );
+
         $request->user()->listings()->create(
             $request->validate([
                 'beds' => 'required|integer|min:0|max:20',
@@ -92,6 +96,7 @@ class RealtorListingController extends Controller
             'update',
             $listing
         );
+
         return Inertia::render(
             'Realtor/Edit',
             [
@@ -106,6 +111,7 @@ class RealtorListingController extends Controller
             'update',
             $listing
         );
+
         $listing->update(
             $request->validate([
                 'beds' => 'required|integer|min:0|max:20',
@@ -129,6 +135,7 @@ class RealtorListingController extends Controller
             'delete',
             $listing
         );
+
         $listing->deleteOrFail();
 
         return redirect()->back()
