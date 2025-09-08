@@ -2,7 +2,7 @@
   <h1 class="text-3xl mb-4">Your Listings</h1>
 
   <section>
-    <!--<RealtorFilters :filters="filters" />-->
+    <RealtorFilters :filters="filters" />
   </section>
 
   <section v-if="listings.data.length" class="grid grid-cols-1 lg:grid-cols-2 gap-2">
@@ -56,7 +56,7 @@
             <Link
               v-else
               class="btn-outline text-xs font-medium"
-              :href="route('realtor.listings.restore', { listing: listing.id })"
+              :href="route('', { listing: listing.id })"
               as="button"
               method="put"
             >
@@ -64,7 +64,14 @@
             </Link>
           </div>
 
-   
+          <div class="mt-2">
+            <Link
+              :href="route('', { listing: listing.id })"
+              class="block w-full btn-outline text-xs font-medium text-center"
+            >
+              Images ({{ listing.images_count }})
+            </Link>
+          </div>
 
           <div class="mt-2">
             <Link
@@ -92,7 +99,7 @@ import Price from '@/UI/Price.vue';
 import Box from '@/UI/Box.vue';
 import EmptyState from '@/UI/EmptyState.vue';
 import Pagination from '@/UI/Pagination.vue';
-//import RealtorFilters from '@/Pages/Realtor/Index/Components/RealtorFilters.vue'
+import RealtorFilters from '@/Pages/Realtor/Index/Components/RealtorFilters.vue';
 import { Link } from '@inertiajs/vue3';
 
 defineProps({

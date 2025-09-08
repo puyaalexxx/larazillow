@@ -56,19 +56,22 @@ const sortLabels = {
 };
 
 const sortOptions = computed(() => sortLabels[filterForm.by]);
+
 const props = defineProps({
   filters: Object,
 });
+
 const filterForm = reactive({
   deleted: props.filters.deleted ?? false,
   by: props.filters.by ?? 'created_at',
   order: props.filters.order ?? 'desc',
 });
+
 watch(
   filterForm,
   debounce(
     () =>
-      router.get(route('realtor.listing.index'), filterForm, {
+      router.get(route('realtor.listings.index'), filterForm, {
         preserveState: true,
         preserveScroll: true,
       }),
