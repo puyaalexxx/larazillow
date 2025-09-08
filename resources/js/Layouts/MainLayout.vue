@@ -8,7 +8,7 @@
         </div>
         <div v-if="user" class="flex items-center text-lg">
           <Link class="text-sm text-gray-500 mr-4 font-bold" href="/realtor/listings">{{ user.name }}</Link>
-          <Link href="/listing/create" class="btn-primary"> + New Listing </Link>
+          <Link href="/realtor/listings/create" class="btn-primary"> + New Listing </Link>
 
           <div>
             <Link

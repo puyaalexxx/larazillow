@@ -10,8 +10,7 @@ Route::get('/', [IndexController::class, 'index']);
 
 //Route::get('/show', [IndexController::class, 'show']);
 
-Route::resource('listing', ListingController::class)->only(['create', 'store', 'edit', 'update'])->middleware('auth');
-Route::resource('listing', ListingController::class)->except(['create', 'store', 'edit', 'update', 'destroy']);
+Route::resource('listing', ListingController::class)->only(['index', 'show']);
 
 
 Route::get('login', [AuthController::class, 'create'])->name('login');
@@ -26,7 +25,6 @@ Route::prefix('realtor')
     ->name('realtor.')
     ->middleware('auth')
     ->group(function () {
-        Route::resource('listings', RealtorListingController::class)/*->only(['index', 'destroy'])*/
-        ;
+        Route::resource('listings', RealtorListingController::class);
     });
 

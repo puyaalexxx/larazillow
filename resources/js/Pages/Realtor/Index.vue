@@ -36,6 +36,7 @@
               target="_blank"
               >Preview</a
             >
+
             <Link
               class="btn-outline text-xs font-medium"
               :href="route('realtor.listings.edit', { listing: listing.id })"
