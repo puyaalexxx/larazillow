@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 use Inertia\Response;
+use Throwable;
 
 class RealtorListingController extends Controller
 {
@@ -129,6 +130,9 @@ class RealtorListingController extends Controller
             ->with('success', 'Listing was changed!');
     }
 
+    /**
+     * @throws Throwable
+     */
     public function destroy(Listing $listing)
     {
         Gate::authorize(

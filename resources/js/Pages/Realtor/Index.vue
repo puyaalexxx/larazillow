@@ -57,7 +57,7 @@
             <Link
               v-else
               class="btn-outline text-xs font-medium"
-              :href="route('', { listing: listing.id })"
+              :href="route('realtor.listings.restore', { listing: listing.id })"
               as="button"
               method="put"
             >
