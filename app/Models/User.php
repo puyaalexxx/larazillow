@@ -46,7 +46,7 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
-    public mixed $is_admin;
+    public bool $is_admin = false;
 
     /**
      * The attributes that are mass assignable.
@@ -80,6 +80,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_admin' => 'boolean',
         ];
     }
 

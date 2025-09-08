@@ -7,7 +7,7 @@
           LaraZillow
         </div>
         <div v-if="user" class="flex items-center text-lg">
-          <div class="text-sm text-gray-500 mr-4 font-bold">{{ user.name }}</div>
+          <Link class="text-sm text-gray-500 mr-4 font-bold" href="/realtor/listings">{{ user.name }}</Link>
           <Link href="/listing/create" class="btn-primary"> + New Listing </Link>
 
           <div>
