@@ -25,3 +25,4 @@
 - User registration and login
 - Policies for Listings
 - Pagination
+- Filtering
