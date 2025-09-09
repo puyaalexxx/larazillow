@@ -15,5 +15,6 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         // Add your routes here, for example:
         '/logout',
+        '/realtor/listings/*',
     ];
 }

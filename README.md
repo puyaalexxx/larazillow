@@ -26,3 +26,5 @@
 - Policies for Listings
 - Pagination
 - Filtering
+- Sorting
+- File uploads

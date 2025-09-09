@@ -67,7 +67,7 @@
 
           <div class="mt-2">
             <Link
-              :href="route('', { listing: listing.id })"
+              :href="route('realtor.listing.image.create', { listing: listing.id })"
               class="block w-full btn-outline text-xs font-medium text-center"
             >
               Images ({{ listing.images_count }})

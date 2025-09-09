@@ -36,6 +36,8 @@ class ListingController extends Controller
         }*/
         //$this->authorize('view', $listing);
 
+        $listing->load('images');
+
         return Inertia::render('Listing/Show', [
             'listing' => $listing
         ]);
