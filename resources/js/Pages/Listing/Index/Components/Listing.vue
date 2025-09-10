@@ -2,6 +2,12 @@
   <Box>
     <div>
       <Link :href="route('listing.show', { listing: listing.id })">
+        <div
+          v-if="listing.sold_at != null"
+          class="text-xs font-bold uppercase border border-dashed p-1 border-green-300 text-green-500 dark:border-green-600 dark:text-green-600 inline-block rounded-md mb-2"
+        >
+          sold
+        </div>
         <div class="flex items-center">
           <Price :price="listing.price" class="text-2xl font-bold" /> &nbsp;
           <div class="text-xs text-gray-500"><Price :price="monthlyPayment" /> mp</div>

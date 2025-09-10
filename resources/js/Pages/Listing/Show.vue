@@ -61,6 +61,14 @@
           </div>
         </div>
       </Box>
+
+      <MakeOffer
+        v-if="user && !offerMade"
+        :listing-id="listing.id"
+        :price="listing.price"
+        @offer-updated="offer = $event"
+      />
+      <OfferMade v-if="user && offerMade" :offer="offerMade"></OfferMade>
     </div>
   </div>
 </template>
@@ -72,18 +80,27 @@ import ListingSpace from '@/UI/ListingSpace.vue';
 import Price from '@/UI/Price.vue';
 import { ref, computed } from 'vue';
 import { useMonthlyPayment } from '@/Composables/useMonthlyPayment';
+import MakeOffer from '@/Pages/Listing/Show/Components/MakeOffer.vue';
+import { usePage } from '@inertiajs/vue3';
+import OfferMade from '@/Pages/Listing/Show/Components/OfferMade.vue';
 
 const props = defineProps({
   listing: Object,
+  offerMade: Object,
 });
 
 const interestRate = ref(2.5);
 const duration = ref(25);
+const offer = ref(props.listing.price);
+
 const { monthlyPayment, totalPaid, totalInterest } = useMonthlyPayment(
-  props.listing.price,
+  offer,
   interestRate,
   duration,
 );
+
+const page = usePage();
+const user = computed(() => page.props.user);
 </script>
 
 <style scoped></style>

@@ -32,7 +32,7 @@ class RealtorListingController extends Controller
                     ->listings()
                     ->filter($filters)
                     ->withCount('images')
-                    // ->withCount('offers')
+                    ->withCount('offers')
                     ->paginate(5)
                     ->withQueryString()
             ]
@@ -49,10 +49,10 @@ class RealtorListingController extends Controller
         return Inertia::render(
             'Realtor/Show',
             [
-                'listing' => $listing/*->load(
+                'listing' => $listing->load(
                     'offers',
-                    'offers.bidder'
-                )*/
+                    'offers.user'
+                )
             ]
         );
     }

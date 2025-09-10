@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Listing;
+use Auth;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -17,6 +18,7 @@ class ListingController extends Controller
 
         $query = Listing::mostRecent()
             ->filter($filters)
+            //->withoutSold()
             ->paginate(10)->withQueryString();
 
         return Inertia::render('Listing/Index', [
@@ -34,12 +36,14 @@ class ListingController extends Controller
         /*if (Auth::user()->can('view', $listing)) {
             abort(403);
         }*/
-        //$this->authorize('view', $listing);
+        $this->authorize('view', $listing);
 
         $listing->load('images');
+        $offer = !Auth::user() ? null : $listing->offers()->byMe()->first();
 
         return Inertia::render('Listing/Show', [
-            'listing' => $listing
+            'listing' => $listing,
+            'offerMade' => $offer
         ]);
     }
 
