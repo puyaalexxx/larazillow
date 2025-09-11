@@ -28,3 +28,4 @@
 - Filtering
 - Sorting
 - File uploads
+- Laravel Notifications

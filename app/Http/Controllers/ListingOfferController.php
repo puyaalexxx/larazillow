@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use App\Models\Offer;
+use App\Notifications\OfferMade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -22,9 +23,10 @@ class ListingOfferController extends Controller
             )->user()->associate($request->user())
         );
 
-        /*$listing->owner->notify(
+        //the notifications will be available for the listing owner not logged in user who made it
+        $listing->owner->notify(
             new OfferMade($offer)
-        );*/
+        );
 
         return redirect()->back()->with('success', 'Offer was made!');
     }

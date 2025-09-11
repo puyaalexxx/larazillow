@@ -13,7 +13,6 @@
     >
       <div class="flex flex-col md:flex-row gap-2 md:items-center justify-between">
         <div :class="{ 'opacity-25': listing.deleted_at }">
-
           <div
             v-if="listing.sold_at != null"
             class="text-xs font-bold uppercase border border-dashed p-1 border-green-300 text-green-500 dark:border-green-600 dark:text-green-600 inline-block rounded-md mb-2"
@@ -87,6 +86,7 @@
       </div>
     </Box>
   </section>
+
   <EmptyState v-else>No listings yet</EmptyState>
 
   <section v-if="listings.data.length" class="w-full flex justify-center mt-4 mb-4">
