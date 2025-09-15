@@ -29,3 +29,6 @@
 - Sorting
 - File uploads
 - Laravel Notifications
+- Docker Compose
+- Mailhog for email testing
+- User email verification
